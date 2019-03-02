@@ -8,6 +8,6 @@ export class GetFileService {
 
   constructor(private http: HttpClient) { }
   getfile() {
-    return this.http.get('../socialcops-task/assets/sachin.csv', {responseType: 'blob'});
+    return this.http.get('/src/assets/sachin.csv', {responseType: 'blob'});
   }
 }
