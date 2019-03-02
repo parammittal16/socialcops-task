@@ -18,7 +18,6 @@ install:
 script:
   - yarn lint
   - yarn build --base-href /socialcops-task/
-  - mv dist/socialcops-task/index.html
 deploy:
   provider: pages
   skip_cleanup: true
