@@ -24,9 +24,9 @@ export class StAboutComponent implements OnInit {
         this.allTextLines = this.csv.split(/\r|\n|\r/);
         this.headers = this.allTextLines[0].split(',');
         this.lines = [];
-        for (let i = 0; i < this.allTextLines.length; i++) {
+        for (const i of this.allTextLines) {
           // split content based on comma
-          const data = this.allTextLines[i].split(',');
+          const data = i.split(',');
           if (data.length === this.headers.length) {
             const tarr = [];
             for (let j = 0; j < this.headers.length; j++) {
