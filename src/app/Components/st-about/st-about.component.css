@@ -1,7 +1,32 @@
-#about{
-    background-image: url('../../../assets/about-background.png');
-}
 h5{
     margin-top:25px;
     margin-bottom:25px;
+}
+h1 {
+    text-transform: uppercase;
+	background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+#statement, #con {
+    background-color: #1575cf;
+    color: white;
+}
+#hundred{
+    background-image: url("../../../assets/india.png");
+  /* Set a specific height */
+  min-height: 60%;
+  max-height: 60%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.con-text {
+    -webkit-text-fill-color: white !important;
+}
+.parallaxtext{
+    background-color: white;
 }

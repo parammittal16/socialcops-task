@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-6">
       <div style="display: block;width:50%;margin:auto" class="mt-5">
+        <hr size="30">
         <h3>Sachin Ramesh Tendulkar</h3>
         <h5><b>Born:</b> 24 April 1973</h5>
         <h5><b>Education:</b> Kirti M. Doongursee College</h5>
@@ -9,37 +10,147 @@
         <h5><b>Height:</b> 5 feet 5 inches (165 cm)</h5>
         <h5><b>Batting:</b>	Right-handed</h5>
         <h5><b>Bowling:</b> Right-arm leg spin, off spin, medium pace</h5>
-        <h5><b>Total Matches Played:</b> {{mathchesPlayed}}</h5>
       </div>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6 text-sm-center text-md-right">
-      <img style="height:100vh;" src="/src/assets/sachin.jpg" alt="sachin_pic">
+      <img style="height:100vh;" src="../../../assets/sachin.jpg" alt="sachin_pic">
     </div>
   </div>
 </div>
-<div id="statement" class="container">
+<div id="statement" class="container-fluid">
   <div class="row mt-5">
     <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-      <h3 class="my-3">Wikipedia says,</h3>
+      <h3 class="my-3">Wikipedia says</h3>
       <em class="my-2">“Sachin Tendulkar is a former Indian cricketer, widely regarded to be the
         greatest cricketer of all time.”</em>
         <h2 class="my-5">Let us see</h2>
       </div>
     </div>
   </div>
-  <div id="statement" class="container">
+  <div id="gen" class="container">
     <div class="row mt-5">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1 class="my-3">| General Analysis</h1>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <h5><b>Total Matches Played:</b> {{mathchesPlayed}}</h5>
+        <h5><b>Cricket played From: </b>{{firstMatchDate}}<b> to </b>{{lastMatchDate}}</h5>
+        <h5><b>Number of Catches: </b>{{noOfCatches}}</h5>
+        <h5><b>Number of Wickets: </b>{{noOfWickets}}</h5>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+        <google-chart [options]="myOptions" [title]="'Won Lost Tied Matches Pie Chart'" style="width: 100%;" [type]="'PieChart'" [data]="winLoseTiedChart"></google-chart>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h4 class="my-3">Score Against Teams ( All types of Matches )</h4>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12 text-center" *ngFor="let team of teamWiseBattingScore">
+        <google-chart [options]="options" [title]="team.title" style="width: 100%;" [type]="'LineChart'" [data]="team.data"></google-chart>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <h5><b>Total Runs: </b>{{totalruns}}</h5>
+        <h5><b>Bating Average:</b> {{average}}</h5>
+        <h5><b>Number of 50's: </b>{{nooffifties}}</h5>
+      </div>
+      <div id ="hundred" class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <span class="parallaxtext my-3">Also,</span><br /><br />
+        <span><em class="parallaxtext my-2">“Sachin Tendulkar is the only cricketer to score 100 centuries in international cricket (test and ODI)”</em></span><br /><br />
+        <span class="parallaxtext my-5">He has record of 100 of 100's</span>
+      </div>
+    </div>
+  </div>
+  <div id="test" class="container">
+    <div class="row mt-5">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1 class="my-3">| Test Matches Analysis</h1>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <ul>
+          <li>The third-youngest debutant (16 years 205 days) in test cricket.</li>
+          <li>He became the first Indian to surpass the 11,000 Test run mark </li>
+          <li>Sachin and Brian Lara are the fastest to score 10,000 runs in 195 innings </li>
+          <li>World record of 8,705 runs in Tests away from home </li>
+          <li>World record of 29 centuries in Tests away from home</li>
+          <li>First player to reach 12,000, 13,000, 14,000, 15,000 Test runs </li>
+          <li>Record for scoring most 1,000 Test runs in a calendar year (six times)</li>
+          <li>Fourth-highest run-getter in a single calendar year in Test history</li>
+          <li>World record for aggregating most runs in the fourth innings</li>
+          <li>The only cricketer to score 100 centuries in international cricket (test and ODI)</li>
+          <li>Highest number (51) of Test centuries</li>
+          <li>and much more...</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="odi" class="container">
+    <div class="row mt-5">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1 class="my-3">| ODI Matches Analysis</h1>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <ul>
+          <li>The second-youngest debutant in ODI cricket</li>
+          <li>Record for being the first batsman to score the most runs (200) in an ODI Innings</li>
+          <li>Scored the most runs in ODI cricket (18426 runs in 463 innings)</li>
+          <li>The only player ever to cross the 14,000, 15,000, 16,000, 17,000 and 18,000 run marks</li>
+          <li>First player to reach 10,000, 11,000, 12,000, 13,000, 14,000, 15,000, 16,000, 17,000 and 18,000 ODI run marks</li>
+          <li>Scored the most centuries (49)</li>
+          <li>Has been involved in six 200-run partnerships in ODI matches</li>
+          <li>Player Of The World Cup Tournament in the 2003 Cricket World Cup</li>
+          <li>Opened the innings 340 times in ODI cricket</li>
+          <li>Most overall runs in international cricket (ODIs + Tests + Twenty20)</li>
+          <li>and much more...</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="odi" class="container">
+    <div class="row mt-5">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1 class="my-3">| Awards and Achievements</h1>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <ul>
+          <li>1994: Arjuna Award Recipient for achievements in cricket</li>
+          <li>1997: One of the five cricketers selected as Wisden Cricketer of the Year </li>
+          <li>1997/98: Rajiv Gandhi Khel Ratna - India's highest sporting honour </li>
+          <li>1999: Padma Shri - India's fourth-highest civilian award </li>
+          <li>2003: The "Greatest Sportsman" of the country in the Best of India poll by Zee News </li>
+          <li>2006: One of the Asian Heroes by Time magazine </li>
+          <li>2006: Sportsperson of the Year </li>
+          <li>2008: Padma Vibhushan - India's second-highest civilian award </li>
+          <li>2009: Time magazine included Sachin's Test Debut in "Top 10 Sporting Moments"</li>
+          <li>2010: LG People's Choice Award </li>
+          <li>2010: ICC Cricketer of the Year - Highest award in the ICC listings </li>
+          <li>2010: Sports Icon of the Year for 21 years at the NDTV Indian of the Year Awards</li>
+          <li>2010: One of the world's 100 most influential people in "The 2010 TIME 100" poll by Time magazine </li>
+          <li>2004, 2007 and 2010: ICC World ODI XI </li>
+          <li>2009, 2010 and 2011: ICC World Test XI </li>
+          <li>1997, 2010 and 2012: Wisden Leading Cricketer in the World </li>
+          <li>Won a record 16 Man of the Series and 62 Man of the Match awards in ODI Matches</li>
+          <li>Has the distinction of having won Man of the Match Award against all ICC Full Members (Test Playing Nations)</li>
+          <li>2012: Wisden India Outstanding Achievement award</li>
+          <li>2012: Honorary Member of the Order of Australia, given by the Australian government</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="testimonials" class="container">
+    <div class="row my-5">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1 class="my-3">| Testimonials</h1>
+      </div>
       <div class="col-sm-12 col-md-12 col-lg-12 text-center">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <em>"I'll be going to bed having nightmares of Sachin just running down the wicket and belting me back over the head for six. He was unstoppable."<br />- Shane Warne</em>
-              </div>
+            </div>
             <div class="carousel-item">
               <em>"Tendulkar is to Cricket what Michael Jordon is to Basketball and Muhammad Ali is to Boxing."<br />- Brian Lara</em>
             </div>
             <div class="carousel-item">
-                <em>"Tendulkar has carried the burden of the nation for 21 years. It is time we carried him on our shoulders."<br />- Virat Kohli</em>
+              <em>"Tendulkar has carried the burden of the nation for 21 years. It is time we carried him on our shoulders."<br />- Virat Kohli</em>
             </div>
           </div>
           <a class="carousel-control-prev text-red" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -54,4 +165,34 @@
       </div>
     </div>
   </div>
-  
+  <div id="con" class="container-fluid p-3">
+    <div class="row mt-5">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1 class="con-text my-3 text-center">| Conclusion</h1>
+        <br /><br />
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <h3>From the Analysis of above data and information we can say that no doubt</h3> 
+        <em class="my-2">“Sachin Tendulkar is a former Indian cricketer, widely regarded to be the
+          greatest cricketer of all time.”</em>
+        </div>
+      </div>
+    </div>
+    <div id="ty" class="container-fluid">
+      <div class="row mt-5 text-center">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <h1 class="my-3">Thank You</h1>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <p>Data used - Provided CSV Data</p>
+          <p>Info links - <a href="https://sports.mapsofindia.com/cricket/sachin-tendulkar-records.html">https://sports.mapsofindia.com/cricket/sachin-tendulkar-records.html</a></p>
+          <p>Libraries used - Bootstrap, google charts package</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+          <h3>About Me</h3>
+          <h3>Param Mittal</h3>
+          <a href="https://github.com/parammittal16">Github</a><br />
+          <a href="https://linkedin.com/in/parammittal16/">Linked In</a>
+        </div>
+      </div>
+    </div><br /><br />
